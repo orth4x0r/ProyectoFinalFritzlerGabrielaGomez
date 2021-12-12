@@ -1,6 +1,6 @@
 from django import template
 from django.http import HttpResponse
-from django.template import Context, Template
+from django.template import Context, Template, loader
 import datetime
 
 def saludo(request):
@@ -21,15 +21,22 @@ def miNombreEs(self, nombre):
     return HttpResponse(documentoDeTexto)
 
 def testTemplate(self):
-    miHtml = open("C:\Users\ilanf\Desktop\CODERHOUSE\ProyectoFinal\ProyectoFinalFritzlerGabrielaGomez\ProyectoDjango\ProjectoFinal\ProjectoFinal\plantillas\template1.html")
 
-    plantilla = Template(miHtml.read()) #carga en mem doc, template1
+    #miHtml = open(r"C:\Users\ilanf\Desktop\CODERHOUSE\ProyectoFinal\ProyectoFinalFritzlerGabrielaGomez\ProyectoDjango\ProjectoFinal\ProjectoFinal\plantillas\template1.html")
 
-    miHtml.close()
+    nom = "Ilan"
+    ap = "Fritzler"
+    fechaAhora = datetime.datetime.now()
 
-    miContexto = Context()
+    diccionario = {"nombre":nom, "apellido":ap, "fecha":fechaAhora}
+
+    #plantilla = Template(miHtml.read()) #carga en mem doc, template1
+    plantilla = loader.get_template('template1.html')
+    #miHtml.close()
+
+    #miContexto = Context(diccionario)
     
-    documento = plantilla.render(miContexto)
+    documento = plantilla.render(diccionario)
 
     return HttpResponse(documento)
 

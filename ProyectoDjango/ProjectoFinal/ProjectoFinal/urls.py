@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from ProjectoFinal.views import miNombreEs, saludo, testTemplate
 from ProjectoFinal.views import chau, diaDeHoy
+from AppCoderProyecto.views import curso
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +26,5 @@ urlpatterns = [
     path('diaDeHoy/', diaDeHoy),
     path('miNombreEs/<nombre>', miNombreEs),
     path('testTemplate/', testTemplate),
+    path('curso/', curso),
 ]

@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'AppCoderProyecto',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'ProjectoFinal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [r"C:\Users\ilanf\Desktop\CODERHOUSE\ProyectoFinal\ProyectoFinalFritzlerGabrielaGomez\ProyectoDjango\ProjectoFinal\ProjectoFinal\plantillas"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
